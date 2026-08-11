@@ -2,18 +2,15 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, type CSSProperties } from 'react'
 import { LiveProjectButton } from '../components/LiveProjectButton'
 import { FadeIn } from '../components/FadeIn'
-import { PROJECT_IMAGES } from '../data/content'
 import { useLanguage } from '../i18n/LanguageContext'
 import type { ProjectItem } from '../i18n/translations'
 
 function ProjectCard({
   project,
-  images,
   index,
   totalCards,
 }: {
   project: ProjectItem
-  images: (typeof PROJECT_IMAGES)[number]
   index: number
   totalCards: number
 }) {
@@ -31,7 +28,7 @@ function ProjectCard({
     <div
       ref={containerRef}
       className={
-        isLast ? 'mb-8 md:mb-24' : 'mb-10 md:mb-0 md:h-[85vh]'
+        isLast ? 'mb-8 md:mb-24' : 'mb-10 md:mb-0 md:h-[50vh]'
       }
     >
       <div
@@ -50,7 +47,7 @@ function ProjectCard({
           style={{ scale }}
           className="rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
         >
-          <div className="mb-4 flex flex-col gap-4 sm:mb-6 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex min-w-0 flex-1 flex-col gap-1">
               <span
                 className="font-black text-[#D7E2EA]"
@@ -87,34 +84,6 @@ function ProjectCard({
             </div>
             <LiveProjectButton className="shrink-0 self-start" />
           </div>
-
-          <div className="flex flex-col gap-3 sm:gap-4 md:flex-row">
-            <div className="flex w-full flex-col gap-3 sm:flex-row md:w-[40%] md:flex-col md:gap-4">
-              <img
-                src={images.col1Image1}
-                alt={`${project.name} preview 1`}
-                loading="lazy"
-                className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-                style={{ height: 'clamp(130px, 16vw, 230px)' }}
-              />
-              <img
-                src={images.col1Image2}
-                alt={`${project.name} preview 2`}
-                loading="lazy"
-                className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-                style={{ height: 'clamp(160px, 22vw, 340px)' }}
-              />
-            </div>
-            <div className="w-full md:w-[60%]">
-              <img
-                src={images.col2Image}
-                alt={`${project.name} main preview`}
-                loading="lazy"
-                className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-                style={{ minHeight: 'clamp(180px, 28vw, 420px)' }}
-              />
-            </div>
-          </div>
         </motion.div>
       </div>
     </div>
@@ -143,7 +112,6 @@ export function ProjectsSection() {
           <ProjectCard
             key={project.number}
             project={project}
-            images={PROJECT_IMAGES[index]}
             index={index}
             totalCards={t.projects.items.length}
           />
