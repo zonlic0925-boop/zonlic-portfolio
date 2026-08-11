@@ -28,7 +28,7 @@ export interface Translation {
   meta: { title: string; lang: string }
   nav: { about: string; skills: string; projects: string; contact: string }
   hero: { tagline: string }
-  about: { heading: string; text: string }
+  about: { heading: string; text: string; educationHeading: string; experienceHeading: string }
   skills: { heading: string; items: ServiceItem[] }
   projects: { heading: string; viewProject: string; items: ProjectItem[] }
   contact: { heading: string; title: string; button: string }
@@ -48,11 +48,13 @@ export const translations: Record<Lang, Translation> = {
     },
     hero: {
       tagline:
-        'certification engineer · msc chemistry · sci researcher · cross-border project lead',
+        'master of chemistry at cityu hk · former certification engineer · native mandarin & cantonese · fluent english',
     },
     about: {
       heading: 'About me',
-      text: "I'm Zonlic (ZHANG Zilong) — an MSc Chemistry candidate at City University of Hong Kong (Distinction, cGPA 3.51/4.30) and former Certification Engineer at Midea Group. At Midea, I managed North American microwave oven certification under FDA, UL, CSA, and FCC standards, and led the Vietnam production transfer certifying 20 models on time. My research spans electrochemical carbon capture at CityU and photocatalysis at Wuyi University, with two SCI-indexed publications. Elected Student Representative for MSc Chemistry, Outstanding Graduate of Wuyi University. Fluent in Mandarin, Cantonese, and English (IELTS 6.5). Let's connect!",
+      text: "I'm Zonlic — equally at home in a lab coat or a compliance review. My path runs from research at Wuyi University to certification at Midea, and now to chemistry at CityU. What ties it together is a simple habit: understand deeply, communicate clearly, deliver reliably.",
+      educationHeading: 'Education',
+      experienceHeading: 'Work Experience',
     },
     skills: {
       heading: 'Skills',
@@ -146,9 +148,9 @@ export const translations: Record<Lang, Translation> = {
         degree: 'Master of Chemistry',
         period: 'Sep 2025 – Jun 2026',
         highlights: [
-          'cGPA 3.51/4.30 (Distinction)',
+          'Distinction',
           'Elected Student Representative, Department of Chemistry',
-          'Research: Redox-Active Molecules for Electrochemical Carbon Capture (Prof. Li Xing)',
+          'Research: Redox-Active Molecules for Electrochemical Carbon Capture',
         ],
       },
       {
@@ -184,11 +186,14 @@ export const translations: Record<Lang, Translation> = {
       contact: '联系',
     },
     hero: {
-      tagline: '认证工程师 · 化学硕士 · 科研工作者 · 跨境项目负责人',
+      tagline:
+        '香港城市大学化学硕士 · 前认证工程师 · 普通话和广东话是母语 · 英文流利沟通',
     },
     about: {
       heading: '关于我',
-      text: '我是 Zonlic（张子龙）—— 香港城市大学化学硕士在读（优等，cGPA 3.51/4.30），曾任美的集团认证工程师。在美的期间，我负责北美微波炉产品的 FDA、UL、CSA、FCC 认证管理，并主导越南产线转移项目，按时完成 20 款型号认证。我的科研方向涵盖城大电化学碳捕集研究及五邑大学光催化研究，已发表 2 篇 SCI 论文。现任化学系硕士项目学生代表，五邑大学优秀毕业生。精通普通话、粤语和英语（IELTS 6.5）。期待与你交流！',
+      text: '我是 Zonlic，习惯在科研与落地之间找答案。从五邑大学的实验室，到美的的认证现场，再到城大的化学研究——场景不同，做事方式一样：先弄懂问题，再把它做成。',
+      educationHeading: '教育经历',
+      experienceHeading: '工作经验',
     },
     skills: {
       heading: '技能',
@@ -282,9 +287,9 @@ export const translations: Record<Lang, Translation> = {
         degree: '化学硕士',
         period: '2025年9月 – 2026年6月',
         highlights: [
-          'cGPA 3.51/4.30（优等）',
+          '优等',
           '化学系硕士项目当选学生代表',
-          '研究方向：电化学碳捕集用氧化还原活性分子（李行教授）',
+          '研究方向：电化学碳捕集用氧化还原活性分子',
         ],
       },
       {
