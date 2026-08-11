@@ -1,3 +1,4 @@
+import { LanguageToggle } from './components/LanguageToggle'
 import { AboutSection } from './sections/AboutSection'
 import { ContactSection } from './sections/ContactSection'
 import { HeroSection } from './sections/HeroSection'
@@ -10,6 +11,7 @@ function App() {
       className="font-kanit"
       style={{ backgroundColor: '#0C0C0C', overflowX: 'clip' }}
     >
+      <LanguageToggle />
       <HeroSection />
       <AboutSection />
       <ServicesSection />

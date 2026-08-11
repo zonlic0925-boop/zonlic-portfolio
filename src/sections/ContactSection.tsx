@@ -2,8 +2,11 @@ import { Mail, Phone, Linkedin } from 'lucide-react'
 import { ContactButton } from '../components/ContactButton'
 import { FadeIn } from '../components/FadeIn'
 import { PERSON } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export function ContactSection() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="contact"
@@ -15,7 +18,7 @@ export function ContactSection() {
             className="hero-heading font-black uppercase leading-none tracking-tight"
             style={{ fontSize: 'clamp(3rem, 12vw, 120px)' }}
           >
-            Contact
+            {t.contact.heading}
           </h2>
         </FadeIn>
 
@@ -24,7 +27,7 @@ export function ContactSection() {
             className="font-light leading-relaxed text-[#D7E2EA]/70"
             style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}
           >
-            {PERSON.fullName} ({PERSON.alias}) — {PERSON.title}
+            {PERSON.fullName} ({PERSON.alias}) — {t.contact.title}
           </p>
         </FadeIn>
 

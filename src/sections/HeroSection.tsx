@@ -2,16 +2,26 @@ import { AnimatedPortrait } from '../components/AnimatedPortrait'
 import { ContactButton } from '../components/ContactButton'
 import { FadeIn } from '../components/FadeIn'
 import { Magnet } from '../components/Magnet'
-import { HERO_PORTRAIT, HERO_TAGLINE, NAV_LINKS, PERSON } from '../data/content'
+import { HERO_PORTRAIT, NAV_HREFS, PERSON } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export function HeroSection() {
+  const { t } = useLanguage()
+
+  const navItems = [
+    { label: t.nav.about, href: NAV_HREFS[0].href },
+    { label: t.nav.skills, href: NAV_HREFS[1].href },
+    { label: t.nav.projects, href: NAV_HREFS[2].href },
+    { label: t.nav.contact, href: NAV_HREFS[3].href },
+  ]
+
   return (
     <section className="relative flex h-screen flex-col overflow-x-clip px-6 md:px-10">
       <FadeIn delay={0} y={-20}>
         <nav className="flex items-center justify-between pt-6 md:pt-8">
-          {NAV_LINKS.map((link) => (
+          {navItems.map((link) => (
             <a
-              key={link.label}
+              key={link.href}
               href={link.href}
               className="text-sm font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70 md:text-lg lg:text-[1.4rem]"
             >
@@ -42,7 +52,7 @@ export function HeroSection() {
             className="max-w-[180px] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[300px] md:max-w-[360px]"
             style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
           >
-            {HERO_TAGLINE}
+            {t.hero.tagline}
           </p>
         </FadeIn>
 

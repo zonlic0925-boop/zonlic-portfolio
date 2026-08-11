@@ -2,14 +2,18 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, type CSSProperties } from 'react'
 import { LiveProjectButton } from '../components/LiveProjectButton'
 import { FadeIn } from '../components/FadeIn'
-import { PROJECTS, type Project } from '../data/content'
+import { PROJECT_IMAGES } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
+import type { ProjectItem } from '../i18n/translations'
 
 function ProjectCard({
   project,
+  images,
   index,
   totalCards,
 }: {
-  project: Project
+  project: ProjectItem
+  images: (typeof PROJECT_IMAGES)[number]
   index: number
   totalCards: number
 }) {
@@ -73,14 +77,14 @@ function ProjectCard({
           <div className="flex gap-3 sm:gap-4">
             <div className="flex w-[40%] flex-col gap-3 sm:gap-4">
               <img
-                src={project.col1Image1}
+                src={images.col1Image1}
                 alt={`${project.name} preview 1`}
                 loading="lazy"
                 className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
                 style={{ height: 'clamp(130px, 16vw, 230px)' }}
               />
               <img
-                src={project.col1Image2}
+                src={images.col1Image2}
                 alt={`${project.name} preview 2`}
                 loading="lazy"
                 className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
@@ -89,7 +93,7 @@ function ProjectCard({
             </div>
             <div className="w-[60%]">
               <img
-                src={project.col2Image}
+                src={images.col2Image}
                 alt={`${project.name} main preview`}
                 loading="lazy"
                 className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
@@ -103,6 +107,8 @@ function ProjectCard({
 }
 
 export function ProjectsSection() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="projects"
@@ -113,17 +119,18 @@ export function ProjectsSection() {
           className="hero-heading text-center font-black uppercase leading-none tracking-tight"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
-          Projects
+          {t.projects.heading}
         </h2>
       </FadeIn>
 
       <div className="mx-auto max-w-6xl">
-        {PROJECTS.map((project, index) => (
+        {t.projects.items.map((project, index) => (
           <ProjectCard
             key={project.number}
             project={project}
+            images={PROJECT_IMAGES[index]}
             index={index}
-            totalCards={PROJECTS.length}
+            totalCards={t.projects.items.length}
           />
         ))}
       </div>

@@ -1,12 +1,9 @@
 import { AnimatedText } from '../components/AnimatedText'
 import { ContactButton } from '../components/ContactButton'
 import { FadeIn } from '../components/FadeIn'
-import {
-  ABOUT_TEXT,
-  DECORATIVE_IMAGES,
-  EDUCATION,
-  WORK_EXPERIENCE,
-} from '../data/content'
+import { DECORATIVE_IMAGES } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
+import type { HighlightItem } from '../i18n/translations'
 
 function HighlightCard({
   title,
@@ -45,7 +42,38 @@ function HighlightCard({
   )
 }
 
+function renderEducationCards(education: HighlightItem[], startDelay: number) {
+  return education.map((edu, i) => (
+    <HighlightCard
+      key={`${edu.school}-${edu.period}`}
+      title={edu.school ?? ''}
+      subtitle={edu.degree ?? ''}
+      period={edu.period}
+      items={edu.highlights}
+      delay={startDelay + i * 0.1}
+    />
+  ))
+}
+
+function renderExperienceCards(
+  experience: HighlightItem[],
+  startDelay: number,
+) {
+  return experience.map((exp, i) => (
+    <HighlightCard
+      key={`${exp.company}-${exp.period}`}
+      title={exp.company ?? ''}
+      subtitle={exp.role ?? ''}
+      period={exp.period}
+      items={exp.highlights}
+      delay={startDelay + i * 0.1}
+    />
+  ))
+}
+
 export function AboutSection() {
+  const { lang, t } = useLanguage()
+
   return (
     <section
       id="about"
@@ -89,37 +117,20 @@ export function AboutSection() {
             className="hero-heading text-center font-black uppercase leading-none tracking-tight"
             style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
           >
-            About me
+            {t.about.heading}
           </h2>
         </FadeIn>
 
         <AnimatedText
-          text={ABOUT_TEXT}
+          key={lang}
+          text={t.about.text}
           className="max-w-[640px] text-center font-medium leading-relaxed text-[#D7E2EA]"
           style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
         />
 
         <div className="grid w-full gap-4 sm:grid-cols-2 sm:gap-5">
-          {EDUCATION.map((edu, i) => (
-            <HighlightCard
-              key={edu.school}
-              title={edu.school}
-              subtitle={edu.degree}
-              period={edu.period}
-              items={edu.highlights}
-              delay={0.1 + i * 0.1}
-            />
-          ))}
-          {WORK_EXPERIENCE.map((exp, i) => (
-            <HighlightCard
-              key={exp.company}
-              title={exp.company}
-              subtitle={exp.role}
-              period={exp.period}
-              items={exp.highlights}
-              delay={0.3 + i * 0.1}
-            />
-          ))}
+          {renderEducationCards(t.education, 0.1)}
+          {renderExperienceCards(t.experience, 0.3)}
         </div>
 
         <ContactButton />

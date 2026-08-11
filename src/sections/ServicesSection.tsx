@@ -1,7 +1,9 @@
 import { FadeIn } from '../components/FadeIn'
-import { SERVICES } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export function ServicesSection() {
+  const { t } = useLanguage()
+
   return (
     <section
       id="skills"
@@ -11,17 +13,17 @@ export function ServicesSection() {
         className="mb-16 text-center font-black uppercase text-[#0C0C0C] sm:mb-20 md:mb-28"
         style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
       >
-        Skills
+        {t.skills.heading}
       </h2>
 
       <div className="mx-auto max-w-5xl">
-        {SERVICES.map((service, index) => (
+        {t.skills.items.map((service, index) => (
           <FadeIn key={service.number} delay={index * 0.1}>
             <div
               className="flex flex-col gap-4 py-8 sm:flex-row sm:items-start sm:gap-8 sm:py-10 md:py-12"
               style={{
                 borderBottom:
-                  index < SERVICES.length - 1
+                  index < t.skills.items.length - 1
                     ? '1px solid rgba(12, 12, 12, 0.15)'
                     : undefined,
               }}

@@ -1,10 +1,13 @@
 import { PERSON } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 
 interface ContactButtonProps {
   className?: string
 }
 
 export function ContactButton({ className = '' }: ContactButtonProps) {
+  const { t } = useLanguage()
+
   return (
     <a
       href={`mailto:${PERSON.email}`}
@@ -18,7 +21,7 @@ export function ContactButton({ className = '' }: ContactButtonProps) {
         outlineOffset: '-3px',
       }}
     >
-      Contact Me
+      {t.contact.button}
     </a>
   )
 }
