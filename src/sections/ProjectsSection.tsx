@@ -31,14 +31,20 @@ function ProjectCard({
     <div
       ref={containerRef}
       className={
-        isLast
-          ? 'mb-10 md:mb-0 md:h-[115vh]'
-          : 'mb-10 md:mb-0 md:h-[85vh]'
+        isLast ? 'mb-8 md:mb-24' : 'mb-10 md:mb-0 md:h-[85vh]'
       }
     >
       <div
-        className="md:sticky md:top-[calc(6rem+var(--card-offset))] lg:top-[calc(8rem+var(--card-offset))]"
-        style={{ '--card-offset': `${index * 28}px` } as CSSProperties}
+        className={
+          isLast
+            ? ''
+            : 'md:sticky md:top-[calc(6rem+var(--card-offset))] lg:top-[calc(8rem+var(--card-offset))]'
+        }
+        style={
+          isLast
+            ? undefined
+            : ({ '--card-offset': `${index * 28}px` } as CSSProperties)
+        }
       >
         <motion.div
           style={{ scale }}
@@ -121,7 +127,7 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32"
+      className="relative -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32"
     >
       <FadeIn delay={0} y={40} className="mb-16 sm:mb-20 md:mb-28">
         <h2
@@ -142,7 +148,6 @@ export function ProjectsSection() {
             totalCards={t.projects.items.length}
           />
         ))}
-        <div aria-hidden className="hidden md:block h-[20vh]" />
       </div>
     </section>
   )

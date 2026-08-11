@@ -10,7 +10,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative z-20 bg-[#0C0C0C] px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
+      className="relative isolate z-30 bg-[#0C0C0C] px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-32"
     >
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-10 text-center sm:gap-14">
         <FadeIn delay={0} y={40}>
