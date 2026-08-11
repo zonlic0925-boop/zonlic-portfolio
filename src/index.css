@@ -10,11 +10,19 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
   background-color: #0c0c0c;
   font-family: 'Kanit', sans-serif;
+}
+
+[id] {
+  scroll-margin-top: 1.5rem;
 }
 
 .hero-heading {

@@ -1,11 +1,15 @@
 import { useLanguage } from '../i18n/LanguageContext'
 
-export function LanguageToggle() {
+interface LanguageToggleProps {
+  className?: string
+}
+
+export function LanguageToggle({ className = '' }: LanguageToggleProps) {
   const { lang, setLang, t } = useLanguage()
 
   return (
     <div
-      className="fixed right-4 top-4 z-50 flex items-center gap-1 rounded-full border border-[#D7E2EA]/20 bg-[#0C0C0C]/80 p-1 backdrop-blur-md sm:right-6 sm:top-6"
+      className={`flex shrink-0 items-center gap-1 rounded-full border border-[#D7E2EA]/20 bg-[#0C0C0C]/80 p-1 backdrop-blur-md ${className}`}
       role="group"
       aria-label={t.language.label}
     >

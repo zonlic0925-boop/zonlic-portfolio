@@ -1,6 +1,7 @@
 import { AnimatedPortrait } from '../components/AnimatedPortrait'
 import { ContactButton } from '../components/ContactButton'
 import { FadeIn } from '../components/FadeIn'
+import { LanguageToggle } from '../components/LanguageToggle'
 import { Magnet } from '../components/Magnet'
 import { HERO_PORTRAIT, NAV_HREFS, PERSON } from '../data/content'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -18,16 +19,19 @@ export function HeroSection() {
   return (
     <section className="relative flex h-screen flex-col overflow-x-clip px-6 md:px-10">
       <FadeIn delay={0} y={-20}>
-        <nav className="flex items-center justify-between pt-6 md:pt-8">
-          {navItems.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70 md:text-lg lg:text-[1.4rem]"
-            >
-              {link.label}
-            </a>
-          ))}
+        <nav className="relative z-30 flex items-center justify-between gap-4 pt-6 md:pt-8">
+          <div className="flex min-w-0 flex-1 items-center justify-between gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+            {navItems.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70 md:text-lg lg:text-[1.4rem]"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <LanguageToggle />
         </nav>
       </FadeIn>
 
