@@ -18,6 +18,7 @@ function ProjectCard({
   totalCards: number
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const isLast = index === totalCards - 1
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start end', 'start start'],
@@ -27,9 +28,16 @@ function ProjectCard({
   const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale])
 
   return (
-    <div ref={containerRef} className="h-[85vh]">
+    <div
+      ref={containerRef}
+      className={
+        isLast
+          ? 'mb-10 md:mb-0 md:h-[115vh]'
+          : 'mb-10 md:mb-0 md:h-[85vh]'
+      }
+    >
       <div
-        className="sticky top-[calc(6rem+var(--card-offset))] md:top-[calc(8rem+var(--card-offset))]"
+        className="md:sticky md:top-[calc(6rem+var(--card-offset))] lg:top-[calc(8rem+var(--card-offset))]"
         style={{ '--card-offset': `${index * 28}px` } as CSSProperties}
       >
         <motion.div
@@ -37,7 +45,7 @@ function ProjectCard({
           className="rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
         >
           <div className="mb-4 flex flex-col gap-4 sm:mb-6 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex flex-col gap-1">
+            <div className="flex min-w-0 flex-1 flex-col gap-1">
               <span
                 className="font-black text-[#D7E2EA]"
                 style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
@@ -71,11 +79,11 @@ function ProjectCard({
                 ))}
               </ul>
             </div>
-            <LiveProjectButton />
+            <LiveProjectButton className="shrink-0 self-start" />
           </div>
 
-          <div className="flex gap-3 sm:gap-4">
-            <div className="flex w-[40%] flex-col gap-3 sm:gap-4">
+          <div className="flex flex-col gap-3 sm:gap-4 md:flex-row">
+            <div className="flex w-full flex-col gap-3 sm:flex-row md:w-[40%] md:flex-col md:gap-4">
               <img
                 src={images.col1Image1}
                 alt={`${project.name} preview 1`}
@@ -91,12 +99,13 @@ function ProjectCard({
                 style={{ height: 'clamp(160px, 22vw, 340px)' }}
               />
             </div>
-            <div className="w-[60%]">
+            <div className="w-full md:w-[60%]">
               <img
                 src={images.col2Image}
                 alt={`${project.name} main preview`}
                 loading="lazy"
                 className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
+                style={{ minHeight: 'clamp(180px, 28vw, 420px)' }}
               />
             </div>
           </div>
@@ -133,6 +142,7 @@ export function ProjectsSection() {
             totalCards={t.projects.items.length}
           />
         ))}
+        <div aria-hidden className="hidden md:block h-[20vh]" />
       </div>
     </section>
   )
