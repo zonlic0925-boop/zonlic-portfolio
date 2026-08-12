@@ -61,33 +61,33 @@ export const translations: Record<Lang, Translation> = {
       items: [
         {
           number: '01',
-          name: 'North American Product Certification',
+          name: 'Product Certification & Compliance',
           description:
-            'End-to-end certification management for Midea microwave ovens entering the North American market — ensuring compliance with FDA, UL, CSA, and FCC standards, and liaising with SGS, Intertek, and UL.',
+            'At Midea, managed end-to-end North American microwave certification — FDA, UL, CSA, and FCC compliance, prototype and document review, and coordination with SGS, Intertek, and UL. Also led the Vietnam production transfer, organizing cross-border meetings and delivering 20 model certifications on schedule.',
         },
         {
           number: '02',
-          name: 'Laboratory Research & Analysis',
+          name: 'Research & Laboratory Analysis',
           description:
-            'Designing experiments and precision testing with HPLC, GC-MS, and UV-Vis spectrophotometers. Contributed to 2 SCI-indexed papers covering experimental design, procedures, and data interpretation.',
+            'Designed experiments and ran precision testing with HPLC, GC-MS, and UV-Vis spectrophotometers at Wuyi University. Contributed to 2 SCI-indexed papers spanning experimental design, procedures, and data interpretation in photocatalysis and luminescent materials.',
         },
         {
           number: '03',
-          name: 'Cross-border Project Management',
+          name: 'Leadership & Communication',
           description:
-            "Led Midea's microwave oven production transfer to Vietnam — organized 8 Sino-Vietnamese meetings, managed certification document submissions, and certified 20 high-demand models on schedule.",
+            'Elected MSc Chemistry Student Representative at CityU, Class Monitor (2020–2025), and Digital Health Asia 2025 Ambassador. Comfortable leading cross-functional coordination and presenting in Mandarin, Cantonese, and English (IELTS 6.5, TOEIC 815).',
         },
         {
           number: '04',
-          name: 'Technical Compliance Review',
+          name: 'AI-Assisted Programming',
           description:
-            'Analyzing product prototypes and technical documentation to identify non-compliance risks with NA certification requirements, providing actionable solutions to R&D and production teams.',
+            'Daily use of Cursor and Codex for rapid prototyping and full-stack development. Independently built a bubble annotation tool from scratch — handling requirements, implementation, and iteration without a dedicated dev team.',
         },
         {
           number: '05',
-          name: 'Leadership & Communication',
+          name: 'Microsoft Office & Automation',
           description:
-            'MSc Chemistry Student Representative at CityU, Class Monitor (2020–2025), Digital Health Asia 2025 Ambassador. Fluent in Mandarin, Cantonese, and English (IELTS 6.5, TOEIC 815).',
+            'Proficient in Excel and Word for structured reporting and documentation. Experienced with Power Automate for workflow automation and Power BI for data visualization and dashboard building.',
         },
       ],
     },
@@ -97,19 +97,32 @@ export const translations: Record<Lang, Translation> = {
       items: [
         {
           number: '01',
-          name: 'NA Microwave Certification',
-          category: 'Midea Group · Work Experience',
-          period: 'Jul 2024 – Jul 2025',
+          name: 'BubbleMate',
+          category: 'Independent Project',
+          period: 'Jun 2026 – Present',
           description:
-            'Managed and coordinated the full product certification process for Midea microwave ovens targeting the North American market, from prototype review through final approval.',
+            'Solo-built BubbleMate — an offline FAI ballooning app for engineering PDFs, delivered end-to-end from product design to production deployment.',
           highlights: [
-            'Ensured compliance with FDA, UL, CSA, and FCC standards',
-            'Partnered with SGS, Intertek, and UL on certification workflows',
-            'Tracked regulatory updates and implemented changes across teams',
+            'Reduced manual drawing inspection from ~30 minutes to ~3 minutes per sheet for a manufacturing QA team',
+            'Built offline workflow with geometry-first bubble detection, tolerance classification, and FA report export',
+            'Owned full stack solo: requirements, UX, architecture, Cursor/Codex-assisted development, QA gates, and rollout',
           ],
         },
         {
           number: '02',
+          name: 'China–Vietnam Cross-border Production Transfer',
+          category: 'Midea Group · Cross-border Project',
+          period: 'Mar 2025 – Jul 2025',
+          description:
+            'Led the North American microwave oven production transfer from China to Vietnam, ensuring all certification and shipment timelines were met for the NA market.',
+          highlights: [
+            'Organized 8 cross-border Sino-Vietnamese coordination meetings',
+            'Completed certification for 20 high-demand models on schedule',
+            'Managed Vietnamese certification documents & feasibility analysis',
+          ],
+        },
+        {
+          number: '03',
           name: 'Wuyi University Lab Research',
           category: 'Research · 2 SCI Papers',
           period: 'May 2021 – Mar 2024',
@@ -119,19 +132,6 @@ export const translations: Record<Lang, Translation> = {
             'MOF-TiO2 photocatalyst for acetals/ketals synthesis (SCI)',
             'Cu(I) complex luminescent piezochromism via guest encapsulation (SCI)',
             'Skilled with HPLC, GC-MS, and UV-Vis spectrophotometers',
-          ],
-        },
-        {
-          number: '03',
-          name: 'Vietnam Production Transfer',
-          category: 'Midea Group · Cross-border Project',
-          period: 'Mar 2025 – Jul 2025',
-          description:
-            'Led the North American microwave oven production transfer from China to Vietnam, ensuring all certification and shipment timelines were met for the NA market.',
-          highlights: [
-            'Organized 8 cross-border Sino-Vietnamese coordination meetings',
-            'Completed certification for 20 high-demand models on schedule',
-            'Managed Vietnamese certification documents & feasibility analysis',
           ],
         },
       ],
@@ -200,33 +200,33 @@ export const translations: Record<Lang, Translation> = {
       items: [
         {
           number: '01',
-          name: '北美产品认证',
+          name: '产品认证与合规',
           description:
-            '负责美的微波炉进入北美市场的全流程认证管理，确保符合 FDA、UL、CSA、FCC 标准，并与 SGS、Intertek、UL 等认证机构协作。',
+            '在美的负责北美微波炉全流程认证——FDA、UL、CSA、FCC 合规审查、原型与文件审核，并与 SGS、Intertek、UL 等机构协作。同时主导越南产线转移，组织跨境会议，按时完成 20 款型号认证。',
         },
         {
           number: '02',
-          name: '实验室研究与分析',
+          name: '科研与实验室分析',
           description:
-            '使用 HPLC、GC-MS、紫外可见分光光度计进行实验设计与精密测试，参与 2 篇 SCI 论文的实验设计、测试流程与数据解读。',
+            '在五邑大学使用 HPLC、GC-MS、紫外可见分光光度计进行实验设计与精密测试，参与 2 篇 SCI 论文，涵盖光催化与发光材料方向的实验设计、操作流程与数据解读。',
         },
         {
           number: '03',
-          name: '跨境项目管理',
+          name: '领导力与沟通',
           description:
-            '主导美的微波炉越南产线转移项目，组织 8 次中越跨境会议，管理认证文件提交，按时完成 20 款热销型号认证。',
+            '城大化学硕士项目当选学生代表、班长（2020–2025）、Digital Health Asia 2025 学生大使。擅长跨团队协调与汇报，普通话、粤语、英语均可流利使用（IELTS 6.5，TOEIC 815）。',
         },
         {
           number: '04',
-          name: '技术合规审查',
+          name: 'AI 辅助编程',
           description:
-            '审查产品原型与技术文档，识别北美认证合规风险，为研发和制造团队提供可落地的改进方案。',
+            '日常使用 Cursor 和 Codex 进行快速原型开发与全栈实现。自主独立开发过一款气泡标注软件，独立完成需求分析、编码实现与迭代优化。',
         },
         {
           number: '05',
-          name: '领导力与沟通',
+          name: 'Microsoft 办公与自动化',
           description:
-            '城大化学硕士项目学生代表、班长（2020–2025）、Digital Health Asia 2025 学生大使。精通普通话、粤语和英语（IELTS 6.5，TOEIC 815）。',
+            '熟练使用 Excel、Word 进行结构化报表与文档撰写。掌握 Power Automate 工作流自动化，以及 Power BI 数据可视化与看板搭建。',
         },
       ],
     },
@@ -236,19 +236,32 @@ export const translations: Record<Lang, Translation> = {
       items: [
         {
           number: '01',
-          name: '北美微波炉认证',
-          category: '美的集团 · 工作经历',
-          period: '2024年7月 – 2025年7月',
+          name: 'BubbleMate',
+          category: '独立项目',
+          period: '2026年6月 – 至今',
           description:
-            '负责美的微波炉北美市场的全流程产品认证，从原型审查到最终批准，协调内外部团队确保合规上市。',
+            '独立开发 BubbleMate——面向工程 PDF 的离线 FAI 气泡标注应用，从产品设计到上线交付全流程一人完成。',
           highlights: [
-            '确保符合 FDA、UL、CSA、FCC 标准',
-            '与 SGS、Intertek、UL 协作完成认证流程',
-            '跟踪法规更新并推动团队内部落地',
+            '帮助一家制造企业 QA 部门将图纸人工检验时间从约 30 分钟/张缩短至平均 3 分钟/张',
+            '实现离线审阅、几何优先气泡检测、公差分类与 FA 报告一键导出',
+            '独立负责需求、交互、架构、Cursor/Codex 辅助开发与质量门禁及生产部署',
           ],
         },
         {
           number: '02',
+          name: '中越跨境产线转移',
+          category: '美的集团 · 跨境项目',
+          period: '2025年3月 – 2025年7月',
+          description:
+            '主导北美微波炉从中国向越南的产线转移，确保所有认证与出货时间节点满足北美市场需求。',
+          highlights: [
+            '组织 8 次中越跨境协调会议',
+            '按时完成 20 款热销型号认证',
+            '管理越南认证文件提交与可行性分析',
+          ],
+        },
+        {
+          number: '03',
           name: '五邑大学实验室研究',
           category: '科研 · 2 篇 SCI 论文',
           period: '2021年5月 – 2024年3月',
@@ -258,19 +271,6 @@ export const translations: Record<Lang, Translation> = {
             'MOF-TiO2 光催化合成缩醛/缩酮（SCI）',
             'Cu(I) 配合物 luminescent piezochromism 客体封装策略（SCI）',
             '熟练操作 HPLC、GC-MS、紫外可见分光光度计',
-          ],
-        },
-        {
-          number: '03',
-          name: '越南产线转移',
-          category: '美的集团 · 跨境项目',
-          period: '2025年3月 – 2025年7月',
-          description:
-            '主导北美微波炉从中国向越南的产线转移，确保所有认证与出货时间节点满足北美市场需求。',
-          highlights: [
-            '组织 8 次中越跨境协调会议',
-            '按时完成 20 款热销型号认证',
-            '管理越南认证文件提交与可行性分析',
           ],
         },
       ],
