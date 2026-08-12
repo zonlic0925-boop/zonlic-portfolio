@@ -77,7 +77,7 @@ export const translations: Record<Lang, Translation> = {
           number: '03',
           name: 'Research & Laboratory Analysis',
           description:
-            'Designed experiments and ran precision testing with HPLC, GC-MS, and UV-Vis spectrophotometers at Wuyi University. Contributed to 2 SCI-indexed papers spanning experimental design, procedures, and data interpretation in photocatalysis and luminescent materials.',
+            'Conducted laboratory research at City University of Hong Kong on redox-active molecules for electrochemical carbon capture, and at Wuyi University designed experiments and ran precision testing with HPLC, GC-MS, and UV-Vis spectrophotometers. Contributed to 2 SCI-indexed papers spanning experimental design, procedures, and data interpretation in photocatalysis and luminescent materials.',
         },
         {
           number: '04',
@@ -217,7 +217,7 @@ export const translations: Record<Lang, Translation> = {
           number: '03',
           name: '科研与实验室分析',
           description:
-            '在五邑大学使用 HPLC、GC-MS、紫外可见分光光度计进行实验设计与精密测试，参与 2 篇 SCI 论文，涵盖光催化与发光材料方向的实验设计、操作流程与数据解读。',
+            '科研经历涵盖香港城市大学（电化学碳捕集·氧化还原活性分子）与五邑大学：运用 HPLC、GC-MS、紫外可见分光光度计进行实验设计与精密测试，参与 2 篇 SCI 论文，涵盖光催化与发光材料方向的实验设计、操作流程与数据解读。',
         },
         {
           number: '04',
