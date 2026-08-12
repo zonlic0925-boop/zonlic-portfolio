@@ -1,104 +1,90 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef, type CSSProperties } from 'react'
-import { LiveProjectButton } from '../components/LiveProjectButton'
 import { FadeIn } from '../components/FadeIn'
 import { useLanguage } from '../i18n/LanguageContext'
 import type { ProjectItem } from '../i18n/translations'
 
-function ProjectCard({
+function ProjectEntry({
   project,
   index,
-  totalCards,
+  total,
 }: {
   project: ProjectItem
   index: number
-  totalCards: number
+  total: number
 }) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const isLast = index === totalCards - 1
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'start start'],
-  })
-
-  const targetScale = 1 - (totalCards - 1 - index) * 0.03
-  const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale])
-
   return (
-    <div
-      ref={containerRef}
-      className={
-        isLast ? 'mb-8 md:mb-24' : 'mb-10 md:mb-0 md:h-[50vh]'
-      }
-    >
-      <div
-        className={
-          isLast
-            ? ''
-            : 'md:sticky md:top-[calc(6rem+var(--card-offset))] lg:top-[calc(8rem+var(--card-offset))]'
-        }
-        style={
-          isLast
-            ? undefined
-            : ({ '--card-offset': `${index * 28}px` } as CSSProperties)
-        }
+    <FadeIn delay={index * 0.08} y={24}>
+      <article
+        className="group relative py-10 sm:py-12 md:py-16"
+        style={{
+          borderBottom:
+            index < total - 1 ? '1px solid rgba(215, 226, 234, 0.12)' : undefined,
+        }}
       >
-        <motion.div
-          style={{ scale }}
-          className="rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
-        >
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex min-w-0 flex-1 flex-col gap-1">
-              <span
-                className="font-black text-[#D7E2EA]"
-                style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
-              >
-                {project.number}
-              </span>
-              <span className="text-xs font-medium uppercase tracking-wider text-[#D7E2EA]/50">
-                {project.period}
-              </span>
-              <span className="text-sm font-medium uppercase tracking-wider text-[#D7E2EA]/60">
-                {project.category}
-              </span>
-              <h3
-                className="font-medium uppercase text-[#D7E2EA]"
-                style={{ fontSize: 'clamp(1.25rem, 3vw, 2.5rem)' }}
-              >
-                {project.name}
-              </h3>
-              <p className="mt-1 max-w-xl text-sm font-light leading-relaxed text-[#D7E2EA]/70">
-                {project.description}
-              </p>
-              <ul className="mt-3 flex flex-col gap-1.5">
-                {project.highlights.map((item) => (
-                  <li
-                    key={item}
-                    className="flex gap-2 text-xs font-light leading-relaxed text-[#D7E2EA]/60 sm:text-sm"
-                  >
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#B600A8]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <LiveProjectButton className="shrink-0 self-start" />
+        <div className="flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
+          <div className="flex shrink-0 items-start gap-4 md:w-28 md:flex-col md:gap-2 lg:w-32">
+            <span
+              className="font-black leading-none text-[#D7E2EA]/25 transition-colors duration-300 group-hover:text-[#B600A8]/80"
+              style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)' }}
+            >
+              {project.number}
+            </span>
+            <span className="hidden h-px flex-1 bg-gradient-to-r from-[#B600A8]/60 to-transparent md:block" />
           </div>
-        </motion.div>
-      </div>
-    </div>
+
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium uppercase tracking-[0.2em] text-[#D7E2EA]/45 sm:text-sm">
+              <span>{project.period}</span>
+              <span className="text-[#B600A8]/70" aria-hidden>
+                ·
+              </span>
+              <span>{project.category}</span>
+            </div>
+
+            <h3
+              className="mt-3 font-medium uppercase leading-tight text-[#D7E2EA] sm:mt-4"
+              style={{ fontSize: 'clamp(1.35rem, 3.2vw, 2.25rem)' }}
+            >
+              {project.name}
+            </h3>
+
+            <p
+              className="mt-3 max-w-2xl font-light leading-relaxed text-[#D7E2EA]/65 sm:mt-4"
+              style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.125rem)' }}
+            >
+              {project.description}
+            </p>
+
+            <ul className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:gap-3">
+              {project.highlights.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-sm font-light leading-relaxed text-[#D7E2EA]/55 sm:text-base"
+                >
+                  <span
+                    className="mt-2 h-px w-4 shrink-0 bg-[#B600A8]"
+                    aria-hidden
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </article>
+    </FadeIn>
   )
 }
 
 export function ProjectsSection() {
   const { t } = useLanguage()
+  const total = t.projects.items.length
 
   return (
     <section
       id="projects"
       className="relative -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-32"
     >
-      <FadeIn delay={0} y={40} className="mb-16 sm:mb-20 md:mb-28">
+      <FadeIn delay={0} y={40} className="mb-12 sm:mb-16 md:mb-20">
         <h2
           className="hero-heading text-center font-black uppercase leading-none tracking-tight"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
@@ -107,13 +93,13 @@ export function ProjectsSection() {
         </h2>
       </FadeIn>
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl border-t border-[#D7E2EA]/12">
         {t.projects.items.map((project, index) => (
-          <ProjectCard
+          <ProjectEntry
             key={project.number}
             project={project}
             index={index}
-            totalCards={t.projects.items.length}
+            total={total}
           />
         ))}
       </div>
