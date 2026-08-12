@@ -69,21 +69,21 @@ export const translations: Record<Lang, Translation> = {
         },
         {
           number: '02',
+          name: 'AI-Assisted Programming',
+          description:
+            'Proficient in AI-assisted development with Cursor and Codex — from rapid prototyping to production-ready full-stack delivery. Independently shipped BubbleMate, owning requirements, architecture, implementation, and iteration without a dedicated engineering team.',
+        },
+        {
+          number: '03',
           name: 'Research & Laboratory Analysis',
           description:
             'Designed experiments and ran precision testing with HPLC, GC-MS, and UV-Vis spectrophotometers at Wuyi University. Contributed to 2 SCI-indexed papers spanning experimental design, procedures, and data interpretation in photocatalysis and luminescent materials.',
         },
         {
-          number: '03',
+          number: '04',
           name: 'Leadership & Communication',
           description:
             'Elected MSc Chemistry Student Representative at CityU, Class Monitor (2020–2025), and Digital Health Asia 2025 Ambassador. Comfortable leading cross-functional coordination and presenting in Mandarin, Cantonese, and English (IELTS 6.5, TOEIC 815).',
-        },
-        {
-          number: '04',
-          name: 'AI-Assisted Programming',
-          description:
-            'Daily use of Cursor and Codex for rapid prototyping and full-stack development. Independently built a bubble annotation tool from scratch — handling requirements, implementation, and iteration without a dedicated dev team.',
         },
         {
           number: '05',
@@ -209,21 +209,21 @@ export const translations: Record<Lang, Translation> = {
         },
         {
           number: '02',
+          name: 'AI 辅助编程',
+          description:
+            '熟练运用 Cursor 与 Codex 进行 AI 辅助开发，覆盖快速原型到可上线全栈交付。独立交付 BubbleMate 气泡标注工具，全流程负责需求、架构、实现与迭代。',
+        },
+        {
+          number: '03',
           name: '科研与实验室分析',
           description:
             '在五邑大学使用 HPLC、GC-MS、紫外可见分光光度计进行实验设计与精密测试，参与 2 篇 SCI 论文，涵盖光催化与发光材料方向的实验设计、操作流程与数据解读。',
         },
         {
-          number: '03',
+          number: '04',
           name: '领导力与沟通',
           description:
             '城大化学硕士项目当选学生代表、班长（2020–2025）、Digital Health Asia 2025 学生大使。擅长跨团队协调与汇报，普通话、粤语、英语均可流利使用（IELTS 6.5，TOEIC 815）。',
-        },
-        {
-          number: '04',
-          name: 'AI 辅助编程',
-          description:
-            '日常使用 Cursor 和 Codex 进行快速原型开发与全栈实现。自主独立开发过一款气泡标注软件，独立完成需求分析、编码实现与迭代优化。',
         },
         {
           number: '05',
