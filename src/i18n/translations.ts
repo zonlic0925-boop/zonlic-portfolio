@@ -27,7 +27,7 @@ export interface ProjectItem {
 export interface Translation {
   meta: { title: string; lang: string }
   nav: { about: string; skills: string; projects: string; contact: string }
-  hero: { tagline: string }
+  hero: { taglines: string[] }
   about: { heading: string; motto: string; text: string; educationHeading: string; experienceHeading: string }
   skills: { heading: string; items: ServiceItem[] }
   projects: { heading: string; viewProject: string; items: ProjectItem[] }
@@ -47,8 +47,12 @@ export const translations: Record<Lang, Translation> = {
       contact: 'Contact',
     },
     hero: {
-      tagline:
-        'master of chemistry at cityu hk · former certification engineer · native mandarin & cantonese · fluent english',
+      taglines: [
+        'Master of Chemistry, CityU HK · Distinction',
+        'Chemistry Student Representative',
+        'Solo Product Developer',
+        'Native Mandarin & Cantonese · Fluent English',
+      ],
     },
     about: {
       heading: 'About me',
@@ -188,8 +192,12 @@ export const translations: Record<Lang, Translation> = {
       contact: '联系',
     },
     hero: {
-      tagline:
-        '香港城市大学化学硕士 · 前认证工程师 · 普通话和广东话是母语 · 英文流利沟通',
+      taglines: [
+        '香港城市大学化学硕士 · Distinction 优等',
+        '化学系学生代表',
+        '独立产品开发者',
+        '普通话和广东话是母语 · 英文流利沟通',
+      ],
     },
     about: {
       heading: '关于我',

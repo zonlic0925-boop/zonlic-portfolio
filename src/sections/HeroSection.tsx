@@ -52,12 +52,14 @@ export function HeroSection() {
 
       <div className="relative z-20 mt-auto flex items-end justify-between pb-7 sm:pb-8 md:pb-10">
         <FadeIn delay={0.35} y={20}>
-          <p
-            className="max-w-[180px] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[320px] md:max-w-[420px]"
-            style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
+          <ul
+            className="flex flex-col gap-1.5 font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:gap-2"
+            style={{ fontSize: 'clamp(0.7rem, 1.2vw, 1.125rem)' }}
           >
-            {t.hero.tagline}
-          </p>
+            {t.hero.taglines.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
         </FadeIn>
 
         <FadeIn delay={0.5} y={20}>
