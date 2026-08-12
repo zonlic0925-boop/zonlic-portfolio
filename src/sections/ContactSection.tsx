@@ -27,7 +27,7 @@ export function ContactSection() {
             className="font-light leading-relaxed text-[#D7E2EA]/70"
             style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}
           >
-            {PERSON.fullName} ({PERSON.alias}) — {t.contact.title}
+            {PERSON.fullName} ({PERSON.alias})
           </p>
         </FadeIn>
 

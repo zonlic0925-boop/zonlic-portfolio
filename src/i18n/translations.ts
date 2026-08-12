@@ -31,7 +31,7 @@ export interface Translation {
   about: { heading: string; motto: string; text: string; educationHeading: string; experienceHeading: string }
   skills: { heading: string; items: ServiceItem[] }
   projects: { heading: string; viewProject: string; items: ProjectItem[] }
-  contact: { heading: string; title: string; button: string }
+  contact: { heading: string; button: string }
   language: { label: string; en: string; zh: string }
   education: HighlightItem[]
   experience: HighlightItem[]
@@ -144,7 +144,6 @@ export const translations: Record<Lang, Translation> = {
     },
     contact: {
       heading: 'Contact',
-      title: 'Certification Engineer · MSc Chemistry · Researcher',
       button: 'Contact Me',
     },
     language: { label: 'Language', en: 'EN', zh: '中文' },
@@ -288,7 +287,6 @@ export const translations: Record<Lang, Translation> = {
     },
     contact: {
       heading: '联系方式',
-      title: '认证工程师 · 化学硕士 · 科研工作者',
       button: '联系我',
     },
     language: { label: '语言', en: 'EN', zh: '中文' },
