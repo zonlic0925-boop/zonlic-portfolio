@@ -151,12 +151,30 @@ export function AboutSection() {
           </h2>
         </FadeIn>
 
-        <AnimatedText
-          key={lang}
-          text={t.about.text}
-          className="max-w-[640px] text-center font-medium leading-relaxed text-[#D7E2EA]"
-          style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
-        />
+        <div className="flex w-full flex-col gap-8 sm:gap-10">
+          <FadeIn delay={0.08} y={24} className="w-full">
+            <figure className="max-w-[640px] text-left">
+              <blockquote
+                className="font-light italic leading-snug tracking-wide text-[#D7E2EA]"
+                style={{ fontSize: 'clamp(1.15rem, 2.4vw, 1.65rem)' }}
+              >
+                &ldquo;{t.about.motto}&rdquo;
+              </blockquote>
+              <figcaption className="sr-only">Personal motto</figcaption>
+              <span
+                className="mt-5 block h-px w-14 bg-gradient-to-r from-[#B600A8] to-transparent"
+                aria-hidden
+              />
+            </figure>
+          </FadeIn>
+
+          <AnimatedText
+            key={lang}
+            text={t.about.text}
+            className="max-w-[640px] text-left font-light leading-[1.8] text-[#D7E2EA]/80"
+            style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.2rem)' }}
+          />
+        </div>
 
         <div className="flex w-full flex-col gap-10 sm:gap-12">
           <HighlightGroup heading={t.about.educationHeading} delay={0.1}>

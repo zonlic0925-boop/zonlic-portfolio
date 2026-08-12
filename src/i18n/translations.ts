@@ -28,7 +28,7 @@ export interface Translation {
   meta: { title: string; lang: string }
   nav: { about: string; skills: string; projects: string; contact: string }
   hero: { tagline: string }
-  about: { heading: string; text: string; educationHeading: string; experienceHeading: string }
+  about: { heading: string; motto: string; text: string; educationHeading: string; experienceHeading: string }
   skills: { heading: string; items: ServiceItem[] }
   projects: { heading: string; viewProject: string; items: ProjectItem[] }
   contact: { heading: string; title: string; button: string }
@@ -52,7 +52,9 @@ export const translations: Record<Lang, Translation> = {
     },
     about: {
       heading: 'About me',
-      text: "I'm Zonlic — equally at home in a lab coat or a compliance review. My path runs from research at Wuyi University to certification at Midea, and now to chemistry at CityU. What ties it together is a simple habit: understand deeply, communicate clearly, deliver reliably.",
+      motto:
+        "It's going to happen, because I am going to make it happen.",
+      text: "I'm Zonlic — equally at home in a lab coat or a compliance review. From research at Wuyi University, to certification at Midea, to chemistry at CityU, I keep the same rhythm: understand deeply, communicate clearly, deliver reliably.",
       educationHeading: 'Education',
       experienceHeading: 'Work Experience',
     },
@@ -191,7 +193,8 @@ export const translations: Record<Lang, Translation> = {
     },
     about: {
       heading: '关于我',
-      text: '我是 Zonlic，习惯在科研与落地之间找答案。从五邑大学的实验室，到美的的认证现场，再到城大的化学研究——场景不同，做事方式一样：先弄懂问题，再把它做成。',
+      motto: '一定会发生，因为我会让它发生。',
+      text: '我是 Zonlic，习惯在科研与落地之间找答案。从五邑大学实验室，到美的认证现场，再到城大化学研究——场景在变，节奏不变：先弄懂问题，再把它做成。',
       educationHeading: '教育经历',
       experienceHeading: '工作经验',
     },
