@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         kanit: ['Kanit', 'sans-serif'],
+        'noto-tc': ['"Noto Sans TC"', 'sans-serif'],
       },
     },
   },
