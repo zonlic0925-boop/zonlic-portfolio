@@ -200,7 +200,8 @@ export const translations: Record<Lang, Translation> = {
     },
     about: {
       heading: '關於我',
-      motto: '一定會發生，因為我會讓它發生。',
+      motto:
+        "It's going to happen, because I am going to make it happen.",
       text: '我是 Zonlic，習慣在科研與落地之間找答案。從五邑大學實驗室，到美的認證現場，再到城大化學研究——場景在變，節奏不變：先弄懂問題，再把它做成。',
       educationHeading: '教育經歷',
       experienceHeading: '工作經驗',
