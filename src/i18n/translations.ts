@@ -48,7 +48,7 @@ export const translations: Record<Lang, Translation> = {
     },
     hero: {
       taglines: [
-        'Master of Chemistry, CityU HK · Distinction',
+        'Master of Chemistry, CityU HK · Graduated with Distinction',
         'Chemistry Student Representative',
         'Solo Product Developer',
         'Native Mandarin & Cantonese · Fluent English',
@@ -153,7 +153,7 @@ export const translations: Record<Lang, Translation> = {
         degree: 'Master of Chemistry',
         period: 'Sep 2025 – Jun 2026',
         highlights: [
-          'Distinction',
+          'Graduated with Distinction',
           'Elected Student Representative, Department of Chemistry',
           'Research: Redox-Active Molecules for Electrochemical Carbon Capture',
         ],
@@ -192,7 +192,7 @@ export const translations: Record<Lang, Translation> = {
     },
     hero: {
       taglines: [
-        '香港城市大學化學碩士 · Distinction 優等',
+        '香港城市大學化學碩士 · Distinction 優等畢業',
         '化學系學生代表',
         '獨立產品開發者',
         '普通話和廣東話是母語 · 英文流利溝通',
@@ -297,7 +297,7 @@ export const translations: Record<Lang, Translation> = {
         degree: '化學碩士',
         period: '2025年9月 – 2026年6月',
         highlights: [
-          '優等',
+          '優等畢業',
           '化學系碩士項目當選學生代表',
           '研究方向：電化學碳捕集用氧化還原活性分子',
         ],
