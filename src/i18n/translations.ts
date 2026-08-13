@@ -87,7 +87,7 @@ export const translations: Record<Lang, Translation> = {
           number: '04',
           name: 'Leadership & Communication',
           description:
-            'Elected MSc Chemistry Student Representative at CityU, Class Monitor (2020–2025), and Digital Health Asia 2025 Ambassador. Comfortable leading cross-functional coordination and presenting in Mandarin, Cantonese, and English (IELTS 6.5, TOEIC 815).',
+            'Elected MSc Chemistry Student Representative at CityU, Class Monitor (2020–2023), and Digital Health Asia 2025 Ambassador. Comfortable leading cross-functional coordination and presenting in Mandarin, Cantonese, and English (IELTS 6.5, TOEIC 815).',
         },
         {
           number: '05',
@@ -231,7 +231,7 @@ export const translations: Record<Lang, Translation> = {
           number: '04',
           name: '領導力與溝通',
           description:
-            '城大化學碩士項目當選學生代表、班長（2020–2025）、Digital Health Asia 2025 學生大使。擅長跨團隊協調與匯報，普通話、粵語、英語均可流利使用（IELTS 6.5，TOEIC 815）。',
+            '城大化學碩士項目當選學生代表、班長（2020–2023）、Digital Health Asia 2025 學生大使。擅長跨團隊協調與匯報，普通話、廣東話、英語均可流利使用（IELTS 6.5，TOEIC 815）。',
         },
         {
           number: '05',
