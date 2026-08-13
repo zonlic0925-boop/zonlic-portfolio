@@ -75,7 +75,7 @@ export const translations: Record<Lang, Translation> = {
           number: '02',
           name: 'AI-Assisted Programming',
           description:
-            'Proficient in AI-assisted development with Cursor and Codex — from rapid prototyping to production-ready full-stack delivery. Independently shipped BubbleMate, owning requirements, architecture, implementation, and iteration without a dedicated engineering team.',
+            'Proficient in AI-assisted development with Cursor and Codex — from rapid prototyping to production-ready full-stack delivery. Independently shipped Dragon Balloon, owning requirements, architecture, implementation, and iteration without a dedicated engineering team.',
         },
         {
           number: '03',
@@ -103,11 +103,11 @@ export const translations: Record<Lang, Translation> = {
       items: [
         {
           number: '01',
-          name: 'BubbleMate',
+          name: 'Dragon Balloon',
           category: 'Independent Project',
           period: 'Jun 2026 – Present',
           description:
-            'Solo-built BubbleMate — an offline FAI ballooning app for engineering PDFs, delivered end-to-end from product design to production deployment.',
+            'Solo-built Dragon Balloon — an offline FAI ballooning app for engineering PDFs, delivered end-to-end from product design to production deployment.',
           highlights: [
             'Reduced manual drawing inspection from ~30 minutes to ~3 minutes per sheet for a manufacturing QA team',
             'Built offline workflow with geometry-first bubble detection, tolerance classification, and FA report export',
@@ -219,7 +219,7 @@ export const translations: Record<Lang, Translation> = {
           number: '02',
           name: 'AI 輔助編程',
           description:
-            '熟練運用 Cursor 與 Codex 進行 AI 輔助開發，覆蓋快速原型到可上線全棧交付。獨立交付 BubbleMate 氣泡標註工具，全流程負責需求、架構、實現與迭代。',
+            '熟練運用 Cursor 與 Codex 進行 AI 輔助開發，覆蓋快速原型到可上線全棧交付。獨立交付 Dragon Balloon 氣泡標註工具，全流程負責需求、架構、實現與迭代。',
         },
         {
           number: '03',
@@ -247,11 +247,11 @@ export const translations: Record<Lang, Translation> = {
       items: [
         {
           number: '01',
-          name: 'BubbleMate',
+          name: 'Dragon Balloon',
           category: '獨立項目',
           period: '2026年6月 – 至今',
           description:
-            '獨立開發 BubbleMate——面向工程 PDF 的離線 FAI 氣泡標註應用，從產品設計到上線交付全流程一人完成。',
+            '獨立開發 Dragon Balloon——面向工程 PDF 的離線 FAI 氣泡標註應用，從產品設計到上線交付全流程一人完成。',
           highlights: [
             '幫助一家製造企業 QA 部門將圖紙人工檢驗時間從約 30 分鐘/張縮短至平均 3 分鐘/張',
             '實現離線審閱、幾何優先氣泡檢測、公差分類與 FA 報告一鍵導出',
