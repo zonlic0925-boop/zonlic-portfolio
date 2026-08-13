@@ -133,7 +133,7 @@ export const translations: Record<Lang, Translation> = {
           category: 'Research · 2 SCI Papers',
           period: 'May 2021 – Mar 2024',
           description:
-            'Conducted chemical experiments and precision testing at Wuyi University, operating advanced instruments and contributing to peer-reviewed publications.',
+            'Conducted chemical experiments and precision testing at Wuyi University, operating advanced analytical instruments while contributing to manuscript preparation and experimental data collection.',
           highlights: [
             'MOF-TiO2 photocatalyst for acetals/ketals synthesis (SCI)',
             'Cu(I) complex luminescent piezochromism via guest encapsulation (SCI)',
@@ -277,7 +277,7 @@ export const translations: Record<Lang, Translation> = {
           category: '科研 · 2 篇 SCI 論文',
           period: '2021年5月 – 2024年3月',
           description:
-            '在五邑大學開展化學實驗與精密測試，操作先進分析儀器，參與同行評審論文撰寫。',
+            '在五邑大學開展化學實驗與精密測試，操作先進分析儀器，參與論文撰寫並負責實驗數據的獲取與整理。',
           highlights: [
             'MOF-TiO2 光催化合成縮醛/縮酮（SCI）',
             'Cu(I) 配合物 luminescent piezochromism 客體封裝策略（SCI）',
