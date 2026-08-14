@@ -1,4 +1,5 @@
-import type { ReactNode } from 'react'
+import { useCallback, useEffect, useState, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { AnimatedText } from '../components/AnimatedText'
 import { ContactButton } from '../components/ContactButton'
 import { FadeIn } from '../components/FadeIn'
@@ -10,6 +11,64 @@ function mediaSrc(file: string) {
   return `${import.meta.env.BASE_URL}projects/${file}`
 }
 
+function MediaLightbox({
+  item,
+  onClose,
+}: {
+  item: HighlightMedia
+  onClose: () => void
+}) {
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose()
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [onClose])
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0C0C0C] p-4 sm:p-8"
+      role="dialog"
+      aria-modal="true"
+      aria-label={item.alt}
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#D7E2EA]/20 bg-[#0C0C0C]/80 text-2xl leading-none text-[#D7E2EA]/80 transition-colors hover:border-[#B600A8]/50 hover:text-[#D7E2EA] sm:right-6 sm:top-6"
+        onClick={onClose}
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <figure
+        className="relative max-h-[90vh] max-w-[min(100%,56rem)]"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <img
+          src={mediaSrc(item.file)}
+          alt={item.alt}
+          className="max-h-[90vh] max-w-full rounded-xl border border-[#D7E2EA]/15 object-contain shadow-2xl"
+        />
+        {item.outlet ? (
+          <figcaption className="absolute inset-x-0 bottom-0 rounded-b-xl bg-gradient-to-t from-[#0C0C0C]/95 via-[#0C0C0C]/75 to-transparent px-4 pb-3 pt-10 text-center text-xs font-medium uppercase tracking-[0.15em] text-[#D7E2EA]/85 sm:text-sm">
+            {item.outlet}
+          </figcaption>
+        ) : null}
+      </figure>
+    </div>,
+    document.body,
+  )
+}
+
 function HighlightMediaStrip({
   heading,
   media,
@@ -17,6 +76,9 @@ function HighlightMediaStrip({
   heading: string
   media: HighlightMedia[]
 }) {
+  const [activeItem, setActiveItem] = useState<HighlightMedia | null>(null)
+  const closeLightbox = useCallback(() => setActiveItem(null), [])
+
   return (
     <div className="mt-5 border-t border-[#D7E2EA]/10 pt-4">
       <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#D7E2EA]/40 sm:text-xs">
@@ -24,24 +86,33 @@ function HighlightMediaStrip({
       </p>
       <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
         {media.map((item) => (
-          <figure
+          <button
             key={`${item.file}-${item.outlet ?? 'photo'}`}
-            className="relative w-[88px] shrink-0 overflow-hidden rounded-lg border border-[#D7E2EA]/10 sm:w-[96px]"
+            type="button"
+            className="group relative w-[88px] shrink-0 overflow-hidden rounded-lg border border-[#D7E2EA]/10 transition-colors hover:border-[#B600A8]/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B600A8]/60 sm:w-[96px]"
+            onClick={() => setActiveItem(item)}
+            aria-label={`View full image: ${item.alt}`}
           >
             <img
               src={mediaSrc(item.file)}
-              alt={item.alt}
+              alt=""
+              aria-hidden
               className="aspect-[3/4] w-full object-cover object-top"
               loading="lazy"
             />
             {item.outlet ? (
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0C0C0C]/95 to-transparent px-1.5 pb-1.5 pt-6 text-[9px] font-medium uppercase tracking-wide text-[#D7E2EA]/80">
+              <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0C0C0C]/95 to-transparent px-1.5 pb-1.5 pt-6 text-[9px] font-medium uppercase tracking-wide text-[#D7E2EA]/80">
                 {item.outlet}
-              </figcaption>
+              </span>
             ) : null}
-          </figure>
+            <span className="pointer-events-none absolute inset-0 bg-[#B600A8]/0 transition-colors group-hover:bg-[#B600A8]/10" />
+          </button>
         ))}
       </div>
+
+      {activeItem ? (
+        <MediaLightbox item={activeItem} onClose={closeLightbox} />
+      ) : null}
     </div>
   )
 }
