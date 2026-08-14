@@ -7,6 +7,14 @@ export interface HighlightItem {
   role?: string
   period: string
   highlights: string[]
+  mediaHeading?: string
+  media?: HighlightMedia[]
+}
+
+export interface HighlightMedia {
+  file: string
+  alt: string
+  outlet?: string
 }
 
 export interface ServiceItem {
@@ -157,6 +165,27 @@ export const translations: Record<Lang, Translation> = {
           'Elected Student Representative, Department of Chemistry',
           'Research: Redox-Active Molecules for Electrochemical Carbon Capture',
         ],
+        mediaHeading: 'Campus activities',
+        media: [
+          {
+            file: 'cityu-campus/gelato-team.png',
+            alt: 'CityU students promoting CityUHK Yogurt Gelato on campus',
+          },
+          {
+            file: 'cityu-campus/dha-appreciation-letter.png',
+            alt: 'CityU appreciation letter for Digital Health Asia 2025 student ambassador',
+          },
+          {
+            file: 'cityu-gelato/press-wenweipo.png',
+            alt: 'Wen Wei Po coverage of CityU yogurt gelato launch',
+            outlet: 'Wen Wei Po',
+          },
+          {
+            file: 'cityu-gelato/press-mingpao.png',
+            alt: 'Ming Pao coverage of CityU yogurt gelato launch',
+            outlet: 'Ming Pao',
+          },
+        ],
       },
       {
         school: 'Wuyi University',
@@ -300,6 +329,27 @@ export const translations: Record<Lang, Translation> = {
           '優等畢業',
           '化學系碩士項目當選學生代表',
           '研究方向：電化學碳捕集用氧化還原活性分子',
+        ],
+        mediaHeading: '校園活動',
+        media: [
+          {
+            file: 'cityu-campus/gelato-team.png',
+            alt: '城大學生在校園推廣 CITYUHK 乳酪雪糕',
+          },
+          {
+            file: 'cityu-campus/dha-appreciation-letter.png',
+            alt: '城大 Digital Health Asia 2025 學生大使致謝信',
+          },
+          {
+            file: 'cityu-gelato/press-wenweipo.png',
+            alt: '文匯報報導城大乳酪雪糕上市',
+            outlet: '文匯報',
+          },
+          {
+            file: 'cityu-gelato/press-mingpao.png',
+            alt: '明報報導城大乳酪雪糕上市',
+            outlet: '明報',
+          },
         ],
       },
       {

@@ -4,19 +4,63 @@ import { ContactButton } from '../components/ContactButton'
 import { FadeIn } from '../components/FadeIn'
 import { DECORATIVE_IMAGES } from '../data/content'
 import { useLanguage } from '../i18n/LanguageContext'
-import type { HighlightItem } from '../i18n/translations'
+import type { HighlightItem, HighlightMedia } from '../i18n/translations'
+
+function mediaSrc(file: string) {
+  return `${import.meta.env.BASE_URL}projects/${file}`
+}
+
+function HighlightMediaStrip({
+  heading,
+  media,
+}: {
+  heading: string
+  media: HighlightMedia[]
+}) {
+  return (
+    <div className="mt-5 border-t border-[#D7E2EA]/10 pt-4">
+      <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#D7E2EA]/40 sm:text-xs">
+        {heading}
+      </p>
+      <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+        {media.map((item) => (
+          <figure
+            key={`${item.file}-${item.outlet ?? 'photo'}`}
+            className="relative w-[88px] shrink-0 overflow-hidden rounded-lg border border-[#D7E2EA]/10 sm:w-[96px]"
+          >
+            <img
+              src={mediaSrc(item.file)}
+              alt={item.alt}
+              className="aspect-[3/4] w-full object-cover object-top"
+              loading="lazy"
+            />
+            {item.outlet ? (
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0C0C0C]/95 to-transparent px-1.5 pb-1.5 pt-6 text-[9px] font-medium uppercase tracking-wide text-[#D7E2EA]/80">
+                {item.outlet}
+              </figcaption>
+            ) : null}
+          </figure>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 function HighlightCard({
   title,
   subtitle,
   period,
   items,
+  media,
+  mediaHeading,
   delay,
 }: {
   title: string
   subtitle: string
   period: string
   items: string[]
+  media?: HighlightMedia[]
+  mediaHeading?: string
   delay: number
 }) {
   return (
@@ -38,6 +82,9 @@ function HighlightCard({
             </li>
           ))}
         </ul>
+        {media && media.length > 0 && mediaHeading ? (
+          <HighlightMediaStrip heading={mediaHeading} media={media} />
+        ) : null}
       </div>
     </FadeIn>
   )
@@ -51,6 +98,8 @@ function renderEducationCards(education: HighlightItem[], startDelay: number) {
       subtitle={edu.degree ?? ''}
       period={edu.period}
       items={edu.highlights}
+      media={edu.media}
+      mediaHeading={edu.mediaHeading}
       delay={startDelay + i * 0.1}
     />
   ))
