@@ -28,6 +28,7 @@ export interface ProjectDemo {
   title: string
   description?: string
   file: string
+  status?: string
 }
 
 export interface ProjectItem {
@@ -146,39 +147,41 @@ export const translations: Record<Lang, Translation> = {
             },
             {
               number: '02',
-              title: 'One-Click Detection',
-              description: 'Automatic bubble placement from drawing geometry.',
-              file: '02-auto-detect.mp4',
-            },
-            {
-              number: '03',
               title: 'Manual Detection',
               description: 'Precise manual marking for edge cases and overrides.',
               file: '03-manual-detect.mp4',
             },
             {
-              number: '04',
+              number: '03',
               title: 'Bubble Customization',
               description: 'Adjust bubble size, style, and numbering.',
               file: '04-bubble-customize.mp4',
             },
             {
-              number: '05',
+              number: '04',
               title: 'Thickness Check',
               description: 'Validate wall thickness against drawing specs.',
               file: '05-thickness-check.mp4',
             },
             {
-              number: '06',
+              number: '05',
               title: 'Tolerance Rules',
               description: 'Configure tolerance classification rules.',
               file: '06-tolerance-rules.mp4',
             },
             {
-              number: '07',
+              number: '06',
               title: 'Export FA Report',
               description: 'One-click FA report and balloon map export.',
               file: '07-export-fa-report.mp4',
+            },
+            {
+              number: '07',
+              title: 'One-Click Detection',
+              description:
+                'Automatic bubble placement from drawing geometry. Capabilities are in active development and being optimized.',
+              file: '02-auto-detect.mp4',
+              status: 'In Development',
             },
           ],
         },
@@ -357,39 +360,40 @@ export const translations: Record<Lang, Translation> = {
             },
             {
               number: '02',
-              title: '一鍵識別功能',
-              description: '基於圖紙幾何自動生成氣泡標註。',
-              file: '02-auto-detect.mp4',
-            },
-            {
-              number: '03',
               title: '手動識別功能',
               description: '精確手動標記，處理特殊情況與覆蓋。',
               file: '03-manual-detect.mp4',
             },
             {
-              number: '04',
+              number: '03',
               title: '氣泡自定義',
               description: '調整氣泡大小、樣式與編號。',
               file: '04-bubble-customize.mp4',
             },
             {
-              number: '05',
+              number: '04',
               title: '厚度檢查功能',
               description: '依圖紙規格驗證壁厚。',
               file: '05-thickness-check.mp4',
             },
             {
-              number: '06',
+              number: '05',
               title: '公差規則設定',
               description: '配置公差分類規則。',
               file: '06-tolerance-rules.mp4',
             },
             {
-              number: '07',
+              number: '06',
               title: '導出 FA 報告和氣泡圖',
               description: '一鍵導出 FA 報告與氣泡圖。',
               file: '07-export-fa-report.mp4',
+            },
+            {
+              number: '07',
+              title: '一鍵識別功能',
+              description: '基於圖紙幾何自動生成氣泡標註，功能開發中，識別能力持續優化。',
+              file: '02-auto-detect.mp4',
+              status: '開發中',
             },
           ],
         },
