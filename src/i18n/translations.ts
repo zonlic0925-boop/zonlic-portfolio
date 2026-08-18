@@ -23,6 +23,13 @@ export interface ServiceItem {
   description: string
 }
 
+export interface ProjectDemo {
+  number: string
+  title: string
+  description?: string
+  file: string
+}
+
 export interface ProjectItem {
   number: string
   name: string
@@ -30,6 +37,8 @@ export interface ProjectItem {
   period: string
   description: string
   highlights: string[]
+  demosHeading?: string
+  demos?: ProjectDemo[]
 }
 
 export interface Translation {
@@ -38,7 +47,12 @@ export interface Translation {
   hero: { taglines: string[] }
   about: { heading: string; motto: string; text: string; educationHeading: string; experienceHeading: string }
   skills: { heading: string; items: ServiceItem[] }
-  projects: { heading: string; viewProject: string; items: ProjectItem[] }
+  projects: {
+    heading: string
+    viewProject: string
+    demoHeading: string
+    items: ProjectItem[]
+  }
   contact: { heading: string; button: string }
   language: { label: string; en: string; zh: string }
   education: HighlightItem[]
@@ -108,6 +122,7 @@ export const translations: Record<Lang, Translation> = {
     projects: {
       heading: 'Projects',
       viewProject: 'View Project',
+      demoHeading: 'Feature Demos',
       items: [
         {
           number: '01',
@@ -120,6 +135,51 @@ export const translations: Record<Lang, Translation> = {
             'Reduced manual drawing inspection from ~30 minutes to ~3 minutes per sheet for a manufacturing QA team',
             'Built offline workflow with geometry-first bubble detection, tolerance classification, and FA report export',
             'Owned full stack solo: requirements, UX, architecture, Cursor/Codex-assisted development, QA gates, and rollout',
+          ],
+          demosHeading: 'Feature Demos',
+          demos: [
+            {
+              number: '01',
+              title: 'Interface Overview',
+              description: 'Main workspace layout, toolbar, and PDF review flow.',
+              file: '01-interface-intro.mp4',
+            },
+            {
+              number: '02',
+              title: 'One-Click Detection',
+              description: 'Automatic bubble placement from drawing geometry.',
+              file: '02-auto-detect.mp4',
+            },
+            {
+              number: '03',
+              title: 'Manual Detection',
+              description: 'Precise manual marking for edge cases and overrides.',
+              file: '03-manual-detect.mp4',
+            },
+            {
+              number: '04',
+              title: 'Bubble Customization',
+              description: 'Adjust bubble size, style, and numbering.',
+              file: '04-bubble-customize.mp4',
+            },
+            {
+              number: '05',
+              title: 'Thickness Check',
+              description: 'Validate wall thickness against drawing specs.',
+              file: '05-thickness-check.mp4',
+            },
+            {
+              number: '06',
+              title: 'Tolerance Rules',
+              description: 'Configure tolerance classification rules.',
+              file: '06-tolerance-rules.mp4',
+            },
+            {
+              number: '07',
+              title: 'Export FA Report',
+              description: 'One-click FA report and balloon map export.',
+              file: '07-export-fa-report.mp4',
+            },
           ],
         },
         {
@@ -273,6 +333,7 @@ export const translations: Record<Lang, Translation> = {
     projects: {
       heading: '項目',
       viewProject: '查看項目',
+      demoHeading: '功能演示',
       items: [
         {
           number: '01',
@@ -285,6 +346,51 @@ export const translations: Record<Lang, Translation> = {
             '幫助一家製造企業 QA 部門將圖紙人工檢驗時間從約 30 分鐘/張縮短至平均 3 分鐘/張',
             '實現離線審閱、幾何優先氣泡檢測、公差分類與 FA 報告一鍵導出',
             '獨立負責需求、交互、架構、Cursor/Codex 輔助開發與質量門禁及生產部署',
+          ],
+          demosHeading: '功能演示',
+          demos: [
+            {
+              number: '01',
+              title: '軟件界面介紹',
+              description: '主界面佈局、工具欄與 PDF 審閱流程。',
+              file: '01-interface-intro.mp4',
+            },
+            {
+              number: '02',
+              title: '一鍵識別功能',
+              description: '基於圖紙幾何自動生成氣泡標註。',
+              file: '02-auto-detect.mp4',
+            },
+            {
+              number: '03',
+              title: '手動識別功能',
+              description: '精確手動標記，處理特殊情況與覆蓋。',
+              file: '03-manual-detect.mp4',
+            },
+            {
+              number: '04',
+              title: '氣泡自定義',
+              description: '調整氣泡大小、樣式與編號。',
+              file: '04-bubble-customize.mp4',
+            },
+            {
+              number: '05',
+              title: '厚度檢查功能',
+              description: '依圖紙規格驗證壁厚。',
+              file: '05-thickness-check.mp4',
+            },
+            {
+              number: '06',
+              title: '公差規則設定',
+              description: '配置公差分類規則。',
+              file: '06-tolerance-rules.mp4',
+            },
+            {
+              number: '07',
+              title: '導出 FA 報告和氣泡圖',
+              description: '一鍵導出 FA 報告與氣泡圖。',
+              file: '07-export-fa-report.mp4',
+            },
           ],
         },
         {

@@ -1,4 +1,5 @@
 import { FadeIn } from '../components/FadeIn'
+import { ProjectDemoShowcase } from '../components/ProjectDemoShowcase'
 import { useLanguage } from '../i18n/LanguageContext'
 import type { ProjectItem } from '../i18n/translations'
 
@@ -68,6 +69,13 @@ function ProjectEntry({
                 </li>
               ))}
             </ul>
+
+            {project.demos && project.demos.length > 0 ? (
+              <ProjectDemoShowcase
+                heading={project.demosHeading ?? 'Feature Demos'}
+                demos={project.demos}
+              />
+            ) : null}
           </div>
         </div>
       </article>
